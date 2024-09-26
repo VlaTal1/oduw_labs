@@ -1,0 +1,22 @@
+.vehicle-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vehicle-form-container-label {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.vehicle-form-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vehicle-form-form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

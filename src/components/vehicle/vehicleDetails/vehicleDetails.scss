@@ -1,0 +1,39 @@
+.vehicle-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.vehicle-name {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.vehicle-details {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+
+.vehicle-btns {
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+}
+
+.vehicle-btn {
+    text-decoration: none;
+    background-color: cadetblue;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: inline-flex;
+    font-size: 16px;
+
+    &--delete {
+        background-color: #da3a3a;
+        border: none;
+        cursor: pointer;
+    }
+}
