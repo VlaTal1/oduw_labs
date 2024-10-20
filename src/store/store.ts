@@ -1,7 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import auctionSlice from './auctionSlice';
+import bidSlice from './bidSlice';
 import vehicleSlice from './vehicleSlice';
 
-const rootReducer = combineReducers({ vehicleSlice });
+const rootReducer = combineReducers({ vehicleSlice, auctionSlice, bidSlice });
 const store = configureStore({
   reducer: rootReducer,
 });

@@ -1,0 +1,35 @@
+.auction-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auction-details-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.auction-details-last-bid {
+  font-weight: bold;
+  font-size: 18px;
+  color: #1e8124;
+}
+
+.auction-details-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.place-bid-btn {
+  text-decoration: none;
+  background-color: #34a83d;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-flex;
+  font-size: 16px;
+  justify-content: center;
+  width: 120px;
+  border: none;
+}

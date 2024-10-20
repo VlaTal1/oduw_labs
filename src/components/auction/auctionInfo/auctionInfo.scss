@@ -1,0 +1,28 @@
+.auction-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auction-info-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.auction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.auction-more-btn {
+  text-decoration: none;
+  background-color: cadetblue;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-flex;
+  font-size: 16px;
+  justify-content: center;
+  width: 40px;
+}

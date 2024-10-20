@@ -5,10 +5,9 @@ import { AppDispatch, RootState } from '../../store/store';
 import { loadVehicleById, loadVehicles } from '../../store/thunks';
 import { resetVehicle } from '../../store/vehicleSlice';
 import StatusInfo from '../../types/bom/statusInfo';
-import { Vehicle } from '../../types/bom/vehicle';
 import CreateVehicle from './createVehicle/createVehicle';
 import VehicleDetails from './vehicleDetails/vehicleDetails';
-import './vehicle.css'
+import './vehicle.css';
 
 const VehiclePage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -38,6 +37,7 @@ const VehiclePage: React.FC = () => {
 
   return (
     <div className='vehicle-container'>
+       <Link to="/auctions">Go to auctions</Link>
       <CreateVehicle/>
       <aside className='vehicle-list'>
           <h2 className='title-2'>Vehicles</h2>
