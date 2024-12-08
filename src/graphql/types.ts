@@ -55,11 +55,11 @@ export type MutationAddAuctionArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  auctionById: Auction;
+  auctionByName: Array<Auction>;
   auctions: Array<Auction>;
 };
 
 
-export type QueryAuctionByIdArgs = {
-  id: Scalars['ID']['input'];
+export type QueryAuctionByNameArgs = {
+  name: Scalars['String']['input'];
 };
