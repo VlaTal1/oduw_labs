@@ -7,7 +7,7 @@ interface Props {
 }
 
 const AuctionsList: React.FC<Props> = ({auctions}) => {
-    if (auctions.length === 0) {
+    if (!auctions || auctions.length === 0) {
         return (
             <div className="auctions-container">
                 <h1>NO AUCTIONS</h1>

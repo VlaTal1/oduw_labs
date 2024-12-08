@@ -1,21 +1,13 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {AppDispatch, RootState} from '../../../store/store';
-import {loadAuctions} from '../../../store/thunks';
-import StatusInfo from '../../../types/bom/statusInfo';
+import React from 'react';
 import './auctions.scss'
 import {Link} from "react-router-dom";
 import AuctionsList from "./AuctionsList";
+import {useGetAuctionsQuery} from "../../../graphql";
 
 const Auctions = () => {
-    const dispatch = useDispatch<AppDispatch>();
-    const {auctions, loadAuctionsStatus} = useSelector((state: RootState) => state.auctionSlice);
+    const {loading, data} = useGetAuctionsQuery()
 
-    useEffect(() => {
-        dispatch(loadAuctions());
-    }, []);
-
-    if (loadAuctionsStatus !== StatusInfo.DONE) {
+    if (loading) {
         return <h1>LOADING</h1>;
     }
 
@@ -34,7 +26,7 @@ const Auctions = () => {
                     Create auction
                 </Link>
             </div>
-            <AuctionsList auctions={auctions}/>
+            <AuctionsList auctions={data.auctions}/>
         </>
     );
 };
