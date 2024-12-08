@@ -52,7 +52,6 @@ const VehiclePage: React.FC = () => {
             </aside>
             <Link to="/auctions" className="button" style={{
                 gridColumn: '1 / 3',
-                textAlign: 'center',
             }}>
                 Go to auctions
             </Link>

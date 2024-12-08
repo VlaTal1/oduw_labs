@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppDispatch, RootState} from '../../../store/store';
 import {loadAuctions} from '../../../store/thunks';
@@ -19,14 +19,34 @@ const Auctions = () => {
         return <h1>LOADING</h1>;
     }
 
-    if (auctions.length === 0) {
-        return <h1>NO AUCTIONS, <Link to="/">go back</Link></h1>;
-    }
-
     return (
-        <div className="auctions-list container">
-            {auctions.map((auction) => (<AuctionInfo auction={auction}/>))}
-        </div>
+        <>
+            <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '20px',
+            }}>
+                <h2 className='title-2'>Auctions</h2>
+                <Link to="/auctions" className="button">
+                    Create auction
+                </Link>
+            </div>
+            <div className="auctions-container">
+                {
+                    auctions.length > 0
+                        ? (
+                            <div className="auctions-list">
+                                {auctions.map((auction) => (
+                                    <AuctionInfo auction={auction}/>
+                                ))}
+                            </div>
+                        )
+                        : (
+                            <h1>NO AUCTIONS, <Link to="/">go back</Link></h1>
+                        )
+                }
+            </div>
+        </>
     );
 };
 
