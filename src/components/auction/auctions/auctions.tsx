@@ -3,9 +3,9 @@ import {useDispatch, useSelector} from 'react-redux';
 import {AppDispatch, RootState} from '../../../store/store';
 import {loadAuctions} from '../../../store/thunks';
 import StatusInfo from '../../../types/bom/statusInfo';
-import AuctionInfo from '../auctionInfo/auctionInfo';
 import './auctions.scss'
 import {Link} from "react-router-dom";
+import AuctionsList from "./AuctionsList";
 
 const Auctions = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -34,21 +34,7 @@ const Auctions = () => {
                     Create auction
                 </Link>
             </div>
-            <div className="auctions-container">
-                {
-                    auctions.length > 0 ? (
-                        <div className="auctions-list">
-                            {auctions.map((auction) => (
-                                <AuctionInfo auction={auction}/>
-                            ))}
-                        </div>
-                    ) : (
-                        <h1>
-                            NO AUCTIONS, <Link to="/">go back</Link>
-                        </h1>
-                    )
-                }
-            </div>
+            <AuctionsList auctions={auctions}/>
         </>
     );
 };

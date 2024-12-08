@@ -22,10 +22,6 @@ const AuctionInfo: FC<Props> = ({auction}) => {
         setIsStarting(true);
         fetch(`http://localhost:8081/api/auctions/${auction.id}/start`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(storedAuction),
         }).then(_ => {
             setIsStarting(false);
             dispatch(loadAuctions());
