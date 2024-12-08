@@ -40,3 +40,11 @@ code {
     border: 1px solid #007bff;
     color: #007bff;
 }
+
+.input {
+    display: block;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}

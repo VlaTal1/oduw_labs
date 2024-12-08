@@ -47,7 +47,7 @@ const AuctionDetails = () => {
         if (!auction) {
             return;
         }
-        
+
         const ws = new WebSocket('ws://localhost:8081/bid');
         setSocket(ws);
 
@@ -122,9 +122,9 @@ const AuctionDetails = () => {
                     <li>Start Price: {auction.startPrice}</li>
                     <li>Start Time: {new Date(auction.startTime).toString()}</li>
                 </ul>
-                <Input label="Client ID" type="text" name="clientId" value={clientId} onClick={handleClientIdChange}/>
+                <Input label="Client ID" type="text" name="clientId" value={clientId} onChange={handleClientIdChange}/>
                 <Input label={'Bid Amount'} type={'number'} name={'bidAmount'} value={bidAmount}
-                       onClick={handleBidAmountChange}/>
+                       onChange={handleBidAmountChange}/>
                 <button className="place-bid-btn" onClick={handlePlaceBid}>Place bid</button>
                 {error && <div>{error}</div>}
             </div>

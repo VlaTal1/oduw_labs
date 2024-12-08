@@ -37,6 +37,11 @@ const VehiclePage: React.FC = () => {
 
     return (
         <div className='vehicle-container'>
+            <Link to="/auctions" className="button" style={{
+                gridColumn: '1 / 3',
+            }}>
+                Go to auctions
+            </Link>
             <CreateVehicle/>
             <aside className='vehicle-list'>
                 <h2 className='title-2'>Vehicles</h2>
@@ -50,11 +55,6 @@ const VehiclePage: React.FC = () => {
                     ))
                     : <VehicleDetails key={vehicle!.id} vehicle={vehicle!}/>}
             </aside>
-            <Link to="/auctions" className="button" style={{
-                gridColumn: '1 / 3',
-            }}>
-                Go to auctions
-            </Link>
         </div>
     );
 };

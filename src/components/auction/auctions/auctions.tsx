@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import AuctionsList from "./AuctionsList";
 import {GET_AUCTIONS, GET_AUCTIONS_BY_NAME} from "../../../graphql";
 import {useLazyQuery} from "@apollo/client";
+import Input from "../../common/input/input";
 
 const Auctions = () => {
     const [fetchAllAuctions, {
@@ -56,11 +57,12 @@ const Auctions = () => {
             </div>
 
             <div style={{margin: '20px 0', display: 'flex', alignItems: 'center', gap: '10px'}}>
-                <input
+                <Input
                     type="text"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="Search by name"
+                    name="search"
                 />
                 <button className="button" onClick={handleSearch}>Search</button>
             </div>
