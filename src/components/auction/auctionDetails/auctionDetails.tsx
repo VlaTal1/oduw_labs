@@ -44,28 +44,30 @@ const AuctionDetails = () => {
     }, [auction, lastBid]);
 
     useEffect(() => {
-        if (auction) {
-            const ws = new WebSocket('ws://localhost:8081/bid');
-            setSocket(ws);
-
-            ws.onmessage = (event) => {
-                console.log(event.data);
-
-                if (`${event.data}`.startsWith('Error:')) {
-                    setError(event.data.toString());
-                    return;
-                }
-
-                const response = JSON.parse(event.data);
-                if (response.amount) {
-                    setLastBidAmount(Number(response.amount));
-                    if (auction && auction.minBid) {
-                        setBidAmount(`${Number(response.amount) + auction.minBid}`);
-                    }
-                    setLastBidClient(response.clientId)
-                }
-            };
+        if (!auction) {
+            return;
         }
+        
+        const ws = new WebSocket('ws://localhost:8081/bid');
+        setSocket(ws);
+
+        ws.onmessage = (event) => {
+            console.log(event.data);
+
+            if (`${event.data}`.startsWith('Error:')) {
+                setError(event.data.toString());
+                return;
+            }
+
+            const response = JSON.parse(event.data);
+            if (response.amount) {
+                setLastBidAmount(Number(response.amount));
+                if (auction && auction.minBid) {
+                    setBidAmount(`${Number(response.amount) + auction.minBid}`);
+                }
+                setLastBidClient(response.clientId)
+            }
+        };
     }, [auction]);
 
     const handleClientIdChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
