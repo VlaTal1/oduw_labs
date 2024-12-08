@@ -32,3 +32,9 @@ code {
     text-decoration: none;
     text-align: center;
 }
+
+.button--outlined {
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+}

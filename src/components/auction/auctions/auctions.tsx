@@ -26,24 +26,27 @@ const Auctions = () => {
                 alignItems: 'center',
                 gap: '20px',
             }}>
+                <Link to="/" className="button button--outlined">
+                    Back
+                </Link>
                 <h2 className='title-2'>Auctions</h2>
-                <Link to="/auctions" className="button">
+                <Link to="/auctions/create" className="button">
                     Create auction
                 </Link>
             </div>
             <div className="auctions-container">
                 {
-                    auctions.length > 0
-                        ? (
-                            <div className="auctions-list">
-                                {auctions.map((auction) => (
-                                    <AuctionInfo auction={auction}/>
-                                ))}
-                            </div>
-                        )
-                        : (
-                            <h1>NO AUCTIONS, <Link to="/">go back</Link></h1>
-                        )
+                    auctions.length > 0 ? (
+                        <div className="auctions-list">
+                            {auctions.map((auction) => (
+                                <AuctionInfo auction={auction}/>
+                            ))}
+                        </div>
+                    ) : (
+                        <h1>
+                            NO AUCTIONS, <Link to="/">go back</Link>
+                        </h1>
+                    )
                 }
             </div>
         </>
