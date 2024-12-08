@@ -36,17 +36,6 @@ export type AuctionInput = {
   vehicleId: Scalars['ID']['input'];
 };
 
-export type AuctionSearchInput = {
-  auctionStatus?: InputMaybe<Scalars['String']['input']>;
-  bidTimeoutSec?: InputMaybe<Scalars['Int']['input']>;
-  id?: InputMaybe<Scalars['ID']['input']>;
-  minBid?: InputMaybe<Scalars['Float']['input']>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  startPrice?: InputMaybe<Scalars['Float']['input']>;
-  startTime?: InputMaybe<Scalars['String']['input']>;
-  vehicleId?: InputMaybe<Scalars['Int']['input']>;
-};
-
 export enum AuctionStatus {
   Closed = 'CLOSED',
   Ended = 'ENDED',
@@ -66,10 +55,11 @@ export type MutationAddAuctionArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  searchAuctions?: Maybe<Array<Maybe<Auction>>>;
+  auctionById: Auction;
+  auctions: Array<Auction>;
 };
 
 
-export type QuerySearchAuctionsArgs = {
-  input?: InputMaybe<AuctionSearchInput>;
+export type QueryAuctionByIdArgs = {
+  id: Scalars['ID']['input'];
 };

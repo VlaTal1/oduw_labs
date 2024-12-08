@@ -1,5 +1,6 @@
 type Query {
-    searchAuctions(input: AuctionSearchInput): [Auction]
+    auctions: [Auction!]!
+    auctionById(id: ID!): Auction!
 }
 
 type Mutation {
@@ -24,17 +25,6 @@ type Auction {
     startPrice: Float!
     minBid: Float!
     auctionStatus: AuctionStatus!
-}
-
-input AuctionSearchInput {
-    id: ID
-    name: String
-    vehicleId: Int
-    startTime: String
-    bidTimeoutSec: Int
-    startPrice: Float
-    minBid: Float
-    auctionStatus: String
 }
 
 enum AuctionStatus {
