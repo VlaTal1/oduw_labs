@@ -1,5 +1,9 @@
+.auctions-container {
+  padding: 20px 0;
+}
+
 .auctions-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
 }
