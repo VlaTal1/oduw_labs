@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useAddAuctionMutation} from "../../../graphql";
 import {AuctionInput} from "../../../graphql/types";
 import Input from "../../common/input/input";
 
 const CreateAuction = () => {
     const [addAuction, {error}] = useAddAuctionMutation();
+    const navigate = useNavigate()
 
     const [auctionInput, setAuctionInput] = useState<AuctionInput>({
         name: '',
@@ -30,6 +31,7 @@ const CreateAuction = () => {
         try {
             await addAuction({variables: {auction: auctionInput}});
             alert('Auction added successfully');
+            navigate('/auctions');
         } catch (err) {
             console.error('Error:', err);
         }
