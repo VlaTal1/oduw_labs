@@ -59,14 +59,12 @@ const CreateAuction = () => {
                     flexDirection: 'column',
                     gap: '10px',
                     width: '300px',
-
                 }}>
                     <Input
                         type="text"
                         name="name"
                         placeholder="Name"
                         onChange={handleChange}
-                        required
                         label="Name"
                     />
                     <Input
