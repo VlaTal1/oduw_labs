@@ -3,7 +3,7 @@ import React from "react";
 import AuctionInfo from "../auctionInfo/auctionInfo";
 
 interface Props {
-    auctions: Auction[];
+    auctions?: Auction[];
 }
 
 const AuctionsList: React.FC<Props> = ({auctions}) => {
@@ -18,9 +18,14 @@ const AuctionsList: React.FC<Props> = ({auctions}) => {
     return (
         <div className="auctions-container">
             <div className="auctions-list">
-                {auctions.map((auction) => (
-                    <AuctionInfo auction={auction}/>
-                ))}
+                {[...auctions]
+                    .sort((a, b) => parseFloat((`${a.id}`)) - parseFloat((`${b.id}`)))
+                    .map((auction) => (
+                        <AuctionInfo
+                            key={auction.id}
+                            auction={auction}
+                        />
+                    ))}
             </div>
         </div>
     );

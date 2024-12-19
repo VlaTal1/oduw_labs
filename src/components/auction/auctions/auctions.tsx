@@ -71,7 +71,7 @@ const Auctions = () => {
                 <div>{searchError.message}</div>
             ) : (
                 (allAuctionsData || searchData) && (
-                    <AuctionsList auctions={isSearching ? searchData.auctionByName : allAuctionsData!.auctions}/>
+                    <AuctionsList auctions={isSearching ? searchData.auctionByName : allAuctionsData.auctions}/>
                 )
             )}
         </>
