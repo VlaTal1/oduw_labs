@@ -19,7 +19,7 @@ const AuctionsList: React.FC<Props> = ({auctions}) => {
         <div className="auctions-container">
             <div className="auctions-list">
                 {[...auctions]
-                    .sort((a, b) => parseFloat((`${a.id}`)) - parseFloat((`${b.id}`)))
+                    .sort((a, b) => parseFloat((`${b.id}`)) - parseFloat((`${a.id}`)))
                     .map((auction) => (
                         <AuctionInfo
                             key={auction.id}

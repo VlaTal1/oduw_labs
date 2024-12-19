@@ -42,7 +42,7 @@ const AuctionInfo: FC<Props> = ({auction}) => {
     return (
         <div className="auction-info-container">
             <div className="auction-info-name">
-                {auction.name}
+                {auction.id} - {auction.name}
             </div>
             <ul className="auction-info">
                 <li>Status: {auction.auctionStatus}</li>
